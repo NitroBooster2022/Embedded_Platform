@@ -2,7 +2,7 @@
 
 Starter code from https://github.com/ECC-BFMC/Embedded_Platform
 
-# Build process
+## Build process
 
 (Requirements: [Python 3.6+](https://www.python.org/downloads/), [CMake 3.19.0+](https://cmake.org/download/))
 
