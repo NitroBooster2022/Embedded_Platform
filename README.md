@@ -16,10 +16,15 @@ python -m pip install mbed-tools
 
 2- Install cross-compiler from https://developer.arm.com/downloads/-/gnu-rm
 
-3- [Build and compile](https://os.mbed.com/docs/mbed-os/v6.16/build-tools/use.html):
+3- Fetch Mbed library:
+```sh
+mbed-tools deploy
+```
+
+4- [Build and compile](https://os.mbed.com/docs/mbed-os/v6.16/build-tools/use.html):
 ```sh
 mbed-tools compile -m B_L4S5I_IOT01A -t GCC_ARM
 ```
 
-4- Flash the code on the board:
+5- Flash the code on the board:
 Copy cmake_build/B_L4S5I_IOT01A/develop/GCC_ARM/robot_car.bin into your stm board
