@@ -742,7 +742,7 @@ namespace periodics{
         }
 
         snprintf(buffer, sizeof(buffer), "@7:%.3f;%.3f;%.3f;%.3f;%.3f;%.3f;%.3f;%.3f;%.3f;;\r\n",
-            converted_euler_r_deg, converted_euler_p_deg, converted_euler_h_deg, m_velocityX, m_velocityY, m_velocityZ, converted_gyro_rps_x, converted_gyro_rps_y, converted_gyro_rps_z);
+            converted_euler_r_deg, converted_euler_p_deg, converted_euler_h_deg, converted_linear_accelX, converted_linear_accelY, converted_linear_accelZ, converted_gyro_rps_x, converted_gyro_rps_y, converted_gyro_rps_z);
         m_serial.write(buffer,strlen(buffer));
     }
 
