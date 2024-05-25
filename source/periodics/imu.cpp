@@ -142,6 +142,9 @@ namespace periodics{
         /*----------------------------------------------------------------*
         ************************* END INITIALIZATION *************************
         *-----------------------------------------------------------------*/
+        init_euler_h_deg = BNO055_INIT_VALUE;
+
+        comres += bno055_convert_float_euler_h_deg(&init_euler_h_deg);
     }
 
     /** @brief  CImu class destructor
@@ -691,6 +694,7 @@ namespace periodics{
         float converted_euler_r_deg = BNO055_INIT_VALUE;
 
         comres += bno055_convert_float_euler_h_deg(&converted_euler_h_deg);
+        converted_euler_h_deg -= init_euler_h_deg;
 
         comres += bno055_convert_float_euler_p_deg(&converted_euler_p_deg);
 
@@ -716,6 +720,8 @@ namespace periodics{
 
         if(converted_linear_accelX <= 0.09 && converted_linear_accelY <= 0.09)
         {
+            converted_linear_accelX = 0.0;
+            converted_linear_accelY = 0.0;
             m_velocityX += 0.0 * 0.1; // Δt = f_period * g_baseTick
             m_velocityY += 0.0 * 0.1;
             m_velocityZ += converted_linear_accelZ * 0.1;

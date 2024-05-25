@@ -103,6 +103,7 @@ namespace periodics
             float m_velocityY;
             float m_velocityZ;
             int m_velocityStationaryCounter;
+            float init_euler_h_deg;
     }; // class CImu
 
 }; // namespace utils
