@@ -34,6 +34,7 @@
 #include <periodics/blinker.hpp>
 /* Header file for the IMU functionality */
 #include <periodics/imu.hpp>
+#include <periodics/imuLSM6DSL.hpp>
 // #include <drivers/bno055_c.hpp>
 /* Header file for the instant consumption measurement functionality */
 #include <periodics/instantconsumption.hpp>

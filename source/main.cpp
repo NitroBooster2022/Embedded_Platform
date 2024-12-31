@@ -47,7 +47,10 @@ periodics::CBlinker g_blinker(0.5 / g_baseTick, LED1);
 // periodics::CTotalVoltage g_totalvoltage(3.0 / g_baseTick, A1, g_rpi);
 
 // It's a task for sending periodically the IMU values
-periodics::CImu g_imu(0.1 / g_baseTick, g_rpi, I2C_SDA, I2C_SCL);
+// periodics::CImu g_imu(0.1 / g_baseTick, g_rpi, I2C_SDA, I2C_SCL);
+
+// Built in IMU LSM6DSL
+periodics::CImuLSM6DSL g_imu(0.1 / g_baseTick, g_rpi, I2C_SDA, I2C_SCL, 0x6B);
 
 //PIN for a motor speed in ms, inferior and superior limit
 drivers::CSpeedingMotor g_speedingDriver(D3, -50.0, 50.0); //speed in cm/s
@@ -69,7 +72,7 @@ drivers::CSerialMonitor::CSerialSubscriberMap g_serialMonitorSubscribers = {
     // {"4",mbed::callback(&g_motorCalibration,&periodics::CTotalVoltage::SpeedMotorCalibration)},
     // {"5",mbed::callback(&g_totalvoltage,&periodics::CTotalVoltage::TotalPublisherCommand)},
     // {"6",mbed::callback(&g_instantconsumption,&periodics::CInstantConsumption ::InstantPublisherCommand)},
-    {"7",mbed::callback(&g_imu,&periodics::CImu::ImuPublisherCommand)},
+    {"7",mbed::callback(&g_imu,&periodics::CImuLSM6DSL::ImuPublisherCommand)},
     {"8",mbed::callback(&g_robotstatemachine,&brain::CRobotStateMachine::serialCallbackBOTHcommand)},
     // {"8",mbed::callback(&g_complexMoves, &drivers::CComplexMoves::serialCallbackComplexMovesCommand)},
     {"9",mbed::callback(&g_velocityControlDuration, &drivers::CVelocityControlDuration::serialCallbackVCDCommand)}
