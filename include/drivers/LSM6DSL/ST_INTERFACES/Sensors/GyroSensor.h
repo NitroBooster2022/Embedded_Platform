@@ -45,7 +45,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 
-#include </home/antoinedeng/Documents/Embedded_Platform/include/drivers/LSM6DSL/ST_INTERFACES/Sensors/Component.h>
+#include "Component.h"
 
 
 /* Classes  ------------------------------------------------------------------*/
