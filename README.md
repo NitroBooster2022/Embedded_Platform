@@ -16,7 +16,9 @@ python -m pip install mbed-tools
 
 2- Install cross-compiler from https://developer.arm.com/downloads/-/gnu-rm
 
-3- Fetch Mbed library (there's an issue with mbed tools when doing it from a different branch, do this commmand from the main branch then switch back):
+3- Fetch Mbed library :
+
+***there's an issue with mbed tools when doing it from a different branch, do this commmand from the main branch then switch back
 ```sh
 mbed-tools deploy
 ```
